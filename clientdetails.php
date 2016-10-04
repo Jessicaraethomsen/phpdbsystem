@@ -28,6 +28,26 @@ while($stmt->fetch()) { }
 	echo '<p>'. $ccph .'</p>';
 ?>
 
+<h2>CURRENT PROJECTS</h2>
+<ul>
+<?php
+$sql = 'select `project-name`, `project-description`, `project-start-date`, `project-end-date`, `other-project-details`
+from `project`
+where `project-id` = ?
+and `client-id` = `client-id`';
+
+$stmt = $link->prepare($sql);
+$stmt->bind_param('i', $cid);
+$stmt->execute();
+$stmt->bind_result($pnam, $pdesc, $psd, $ped, $popid);
+
+while($stmt->fetch()) { 
+	echo '<li><a href="projectdetails.php?cid='.$cid.'">'.$pnam.' </a></li>';
+}
+?>
+
+ 
+</ul>
 
 
 
