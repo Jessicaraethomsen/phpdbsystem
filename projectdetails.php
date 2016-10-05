@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Project Specific Details</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+
 <h2> Project Specific Details </h2>
 
 <?php
@@ -65,7 +67,7 @@ $stmt->execute();
 $stmt->bind_result($rnam);
 
 while($stmt->fetch()) { 
-	echo '<li><a href="persondetails.php?cid='.$cid.'">'.$rnam.' </a></li>';
+	echo '<li><a href="persondetails.php?cid='.$cid.'">'.$rnam.'</a></li>';
 }
 ?>
 

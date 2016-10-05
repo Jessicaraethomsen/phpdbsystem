@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Our Clients</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+
 <h1>Clients</h1>
 <ul>
 <?php

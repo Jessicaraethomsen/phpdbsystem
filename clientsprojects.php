@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Client's Project</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -25,9 +26,10 @@ $stmt->bind_result($cnam, $cad, $ccph, $czip);
 
 while($stmt->fetch()) {
 	//echo '<li><a href="projectdetails.php?fid='.$cnam.'">'.$cad.' ('.$czip.')</a></li>'.PHP_EOL;
-	echo '<h1>'. $cnam .'</h1>';
+	echo '<p>'. $cnam .'</p>';
 	echo '<p>'. $cad . ' ' . $czip.'</p>'; //How to combine two strings you idoit! with a space!
 	echo '<p>'. $ccph .'</p>';
+	echo format_telephone($ccph);
 	
 }
 
