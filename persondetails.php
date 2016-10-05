@@ -8,7 +8,6 @@
 
 <body>
 
-
 <h2>Resources</h2>
 <ul>
 <?php

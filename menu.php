@@ -12,7 +12,7 @@
 <ul>
 <li> <a href="index.php"<?php if($curpage == 'index.php') {echo 'class="active"'; }?>> Clients </a></li>
 <li> <a href="clientdetails.php"<?php if($curpage == 'clientdetails.php') {echo 'class="active"'; }?>>  Clients Info</a></li>
-<li> <a href="services.php"<?php if($curpage == 'projectdetails.php') {echo 'class="active"'; }?>> Projects </a></li>
-<li> <a href="blog.php"<?php if($curpage == 'persondetails.php') {echo 'class="active"'; }?>> Resources </a></li>
-<li> <a href="contact.php"<?php if($curpage == 'allresources.php') {echo 'class="active"'; }?>> All Resources </a></li>
+<li> <a href="projectdetails.php"<?php if($curpage == 'projectdetails.php') {echo 'class="active"'; }?>> Projects </a></li>
+<li> <a href="persondetails.php"<?php if($curpage == 'persondetails.php') {echo 'class="active"'; }?>> Resources </a></li>
+<li> <a href="allresources.php"<?php if($curpage == 'allresources.php') {echo 'class="active"'; }?>> All Resources </a></li>
 </ul>
