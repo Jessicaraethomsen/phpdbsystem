@@ -7,6 +7,12 @@
 </head>
 
 <body>
+<?php
+
+/*The include statement includes and evaluates the specified file.*/
+include 'menu.php';
+?>
+
 
 <h1>Clients</h1>
 <ul>

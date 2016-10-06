@@ -10,6 +10,12 @@
 
 <?php
 
+/*The include statement includes and evaluates the specified file.*/
+include 'menu.php';
+?>
+
+<?php
+
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
 
 ?>

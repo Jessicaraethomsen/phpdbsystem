@@ -7,6 +7,12 @@
 </head>
 <body>
 
+<?php
+
+/*The include statement includes and evaluates the specified file.*/
+include 'menu.php';
+?>
+
 
 <h2> Project Specific Details </h2>
 
@@ -43,13 +49,16 @@ $stmt->execute();
 $stmt->bind_result($pnam, $pdesc, $psd, $ped, $popid);
 
 while($stmt->fetch()) { 
-	echo '<li><a href="projectdetails.php?cid='.$cid.'">'.$pnam.' </a></li>';
+	echo '<p>'. $pnam .'</p>';
 	echo '<h4>'.'Description'.'</h4>';
 	echo '<p>'. $pdesc .'</p>';
 	echo '<h4>'.'Start Date'.'</h4>';
 	echo '<p>'. $psd .'</p>';
 	echo '<h4>'.'End Date'.'</h4>';
 	echo '<p>'. $ped .'</p>';
+	echo '<br>';
+	echo '<br>';
+	echo '<br>';
 	
 }
 ?>
