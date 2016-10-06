@@ -33,6 +33,39 @@ while($stmt->fetch()) {
 }
 ?>
 </ul>
+
+<ul>
+
+<!--DELETE PROJECT-->
+<?php 
+
+$sql = 'select `project-id`, `project-name`
+from `project`
+where `project-id` = ?
+and `client-id` = `client-id`';
+
+$stmt = $link->prepare($sql);
+$stmt->bind_param('i', $cid);
+$stmt->execute();
+$stmt->bind_result($pid, $pnam);
+
+while($stmt->fetch()) { 
+	echo '<li><a href="projectdetails.php?cid='.$cid.'">'.$pnam.'</a>'; ?>
+
+
+<form action="deleteproject.php" method="post">
+<input type="hidden" name="pid" value="<?=$pid?>">
+<input type="hidden" name="cid" value="<?=$cid?>"> <input type="submit" value="X">
+</form>	
+
+<?php
+echo '</li>'; }
+?>
+
+</ul>
+
+
+
 </body>
 </html>
 
