@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Personal Resources</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -13,7 +14,13 @@
 include 'menu.php';
 ?>
 
-<h2>Personal Resources</h2>
+<div class="bigbox">
+<img src="img/browser.png" alt="logo" style="width:70px;height:75px;">
+<h1>JUST WEB- Client's Details</h1>
+<br>
+
+<div class="leftbox">
+<h3>Personal Resources</h3>
 <ul>
 <?php 
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
@@ -34,12 +41,17 @@ while($stmt->fetch()) {
 	echo '<p>'.$rtcid.'</p>';
 }
 ?>
- <form type="button" action="allresources.php" method="get">
- 	<button>See all resources</button>
-</form>
 </ul>
+<br>
+<h3>All Resources</h3>
+<p> Click here to see all our Resources</p>
+ <form type="button" action="allresources.php" method="get">
+ 	<button class="button">See all resources</button>
+</form>
 
-<h2>Working projects</h2>
+</div>
+<div class="rightbox">
+<h3>Working projects</h3>
 <ul>
 <?php 
 
@@ -52,19 +64,22 @@ $stmt->execute();
 $stmt->bind_result($pid, $rid);
 
 while($stmt->fetch()) { 
-	echo '<h5>Project ID</h5>';
-	echo '<p>'.$pid.'</p>';
-	echo '<h5>Resource ID</h5>';
-	echo '<p>'.$rid.'</p>';
+	echo '<h5>Project ID/Resource ID</h5>';
+		echo '<p>'.$pid. ' ' .$rid.'</p>';
+	
 	
 }
 ?>
 </ul>
+
+<h3>Delete Project ID/Project Resource</h3>
+<p> Delete ID/Resource nr. from above</p>
 <form action="deleteproject.php" method="post">
-    	<input type="text" name="pid" placeholder="Project ID">
-        <input type="text" name="rid" placeholder="Resource ID">
+    	<input type="text" name="pid" placeholder="Project ID" required><br>
+        <input type="text" name="rid" placeholder="Resource ID" required><br>
     	<input type="submit" value="Delete Resource">
     </form>
-
+ </div>   
+</div>
 </body>
 </html>

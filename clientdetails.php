@@ -3,17 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Client Details</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 
 <body>
+
 <?php
 
 /*The include statement includes and evaluates the specified file.*/
 include 'menu.php';
 ?>
 
-<h2>Client info</h2>
+<div class="bigbox">
+<img src="img/browser.png" alt="logo" style="width:70px;height:75px;">
+<h1>JUST WEB- Client's Details</h1>
+<br>
+
+<div id="current">
 <?php
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
 
@@ -30,7 +37,8 @@ $stmt->bind_result($cnam, $cadr, $ccnam, $ccphone, $czip);
 
 while($stmt->fetch()) { }
 
-echo '<h3>'.$cnam.'</h3>';
+echo '<h4>'.'Clients Name:'.'</h4>';	
+echo '<h5>'.$cnam.'</h5>';
 ?>
 <!--UPDATE DETAILS-->
 	<form action="updatedetails.php" method="post">
@@ -40,9 +48,14 @@ echo '<h3>'.$cnam.'</h3>';
     </form>
 <?php 
 	//combine to strings and make between them
-	echo '<h4>'.'Address:'.'</h4>';
-	echo '<p>'.$cadr. ' ' .$czip.'</p>';
+	echo '<h4>'.'Address:'.'</h4>';	
+?>	
+	
+	
+<?php 	
+	echo '<h5>'.$cadr. ' ' .$czip.'</h5>';
 	?>
+    
     <?php 
     $sql = 'SELECT `City` 
 	FROM `Zip_Code` 
@@ -65,9 +78,11 @@ while($stmt->fetch()) {
 }
 ?>
 </ul>
-      
-
+</div>      
+<div class="rightbox">
 <h2>Projects</h2>
+<p>Click on current project for more details </p>
+
 <ul>
 
 <!--PROJECTS-->
@@ -84,10 +99,18 @@ $stmt->execute();
 $stmt->bind_result($pid, $pnam);
 
 while($stmt->fetch()) { 
-	echo '<li><a href="projectdetails.php?cid='.$cid.'">'.$pnam.'</a>'; 
+	echo '<li><a href="projectdetails.php?cid='.$cid.'">'.$pnam.'</li>'; 
 }
 	?>	
 </ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
 
 
 </body>

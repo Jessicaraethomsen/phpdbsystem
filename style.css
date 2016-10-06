@@ -23,6 +23,13 @@ h4 {
 	color: #393838;
 	font-family: 'Oxygen Mono', monospace;
 	}
+h5 {
+	color: #393838;
+	font-family: 'Oxygen Mono', monospace;
+	font-weight:100;
+	font-style:normal;
+	}
+
 
 #nav{
 	float: right;
@@ -47,6 +54,16 @@ li > a:hover {
 	background: #CAEBF2;
 	border-radius: .2em;
 }
+
+
+#indexlist {
+	list-style-type: none;
+	font-size: 1.2em;
+	color: #A9A9A9;
+	padding: 7px 10px;
+	
+	}
+
 
 p {
 	
@@ -107,8 +124,99 @@ nav ul form input {
 	
 	
 /*HERE IS SIGNUP FORM*/
-/*HERE IS SIGNUP FORM*/
-/*HERE IS SIGNUP FORM*/
+
+/*HERE IS CURRENT CLIENT BOX*/
+
+#current {
+	width: 40%;
+	display:inline-block;
+	margin-left: 10%;
+
+	
+	}	
+	
+#current p {
+	font-size:12px;
+	font-style:italic;
+	}
+
+/*big BOX */	
+	.bigbox {display:inline-block;
+		width: 90%;
+		margin-left: 2%;
+	}
+	.bigbox h1 {
+	text-align: center;
+	}
+
+.bigbox img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	}
+	
+.bigbox p {
+	font-size:12px;
+	
+	}
+	
+	
+/*right BOX */	
+.rightbox {
+	width: 40%;
+	position: relative;
+	display:inline-block;
+	 float: right;
+ 	 max-width: 300px;
+	 margin-right: 15%;
+	 border-radius: .4em;
+	}
+	
+.rightbox li {
+	list-style-type: none;
+	margin-top: 5%;
+	}
+	
+	
+/*left BOX */	
+.leftbox {
+	width: 40%;
+	position:relative;
+	display:inline-block;
+	 float: left;
+ 	 max-width: 300px;
+	 margin-left: 15%;
+	 border-radius: .4em;
+	}
+	
+.lefttbox li {
+	list-style-type: none;
+	margin-top: 5%;
+	}
+	
+.lefttbox p {
+	font-size:12px;
+	font-style:italic;
+	}
+	
+/*BIG BOX AROUND INDEX*/	
+#clientbox {
+	display:inline-block;
+		width: 90%;
+		margin-left: 2%;
+	}	
+	
+	
+	
+#clientbox h1 {
+	text-align: center;
+	}
+
+#clientbox img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	}
 		
 	
 #signupform {
@@ -117,15 +225,16 @@ nav ul form input {
 	}
 	
 #formdesign {
-  position: relative;
+  float: right;
+  margin-right: 5px;
   max-width: 300px;
-  margin: 0 auto 100px;
   padding: 30px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   text-align: center;
+  
 	
 	 
 	}
@@ -177,31 +286,50 @@ nav ul form input {
 	color: #FFFFFF;
 }
 
+.button {
+	background: #CAEBF2;
+  width: 50%;
+  padding: 15px;
+  color: #A9A9A9;
+  font-size: 14px;
+  cursor: pointer;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: #efefef 1px solid;
+	}
+	
+.button:hover { 
+ 	background-color: #A9A9A9;
+	color: #FFFFFF;}
+
+.button:a { 
+	color: #FFFFFF;}
 	
 	#formbox {
 	 position: relative;
+	 float: right;
 	 background: #FFFFFF;
  	 max-width: 300px;
-	 height: 475px;
- 	 margin: 0 auto;
-	 margin-top: 10%;
+	 height: 460px;
+	 margin-right: 10%;
 	 border-radius: .4em;;
-	
 	
 	}
 	
 	#formbox h2{
- 	 padding-top: 2%;;
-	 height: 6%;
+	margin-top: auto;	
+	 height: 4%;
   	font-size: 20px;
   	font-weight: 300;
 	 color: #FF3B3F;
 	font-family: 'Oxygen', monospace;
-	
 	 text-align: center;
 		}
 		
 	#formbox h3{
+		margin-top: 2%;
  	 padding: 0;
 	 height: 7%;
   	font-size: 15px;

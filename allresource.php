@@ -7,8 +7,10 @@
 
 <body>
 
-<h2>Resources</h2>
-<ul>
+<div class="rightbox">
+<h2>All JUST WEB's Resources </h2>
+<p>Click on current project for more details </p>
+
 <?php
 
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');

@@ -8,7 +8,7 @@ $czip = filter_input(INPUT_POST, '$czip', FILTER_VALIDATE_INT) or die('Missing/i
 
 require_once 'dbcon.php';
 
-$sql = 'INSERT INTO `Client`(`Client-Name`, `Client-Adress`, `Client-Contact-Name`, `Client-Contact-Phone`, `Zip_Code_Zip_Code_ID`) VALUES (?,?,?,?,?)';
+$sql = 'INSERT INTO `Client`(`Client-Name`, `Client-Adress`, `Client-Contact-Name`, `Client-Contact Phone`, `Zip_Code_Zip_Code_ID`) VALUES (?,?,?,?,?)';
 $stmt = $link->prepare($sql);
 $stmt->bind_param('sssii', $cnam, $cad, $ccnam, $cphone, $czip);
 $stmt->execute();

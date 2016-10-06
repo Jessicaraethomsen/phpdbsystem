@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Project Specific Details</title>
+
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -13,9 +14,14 @@
 include 'menu.php';
 ?>
 
+<div class="bigbox">
+<img src="img/browser.png" alt="logo" style="width:70px;height:75px;">
+<h1>JUST WEB- Client's Projects</h1>
+<br>
 
-<h2> Project Specific Details </h2>
 
+<div class= "leftbox">
+<ul>
 <?php
 
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
@@ -31,12 +37,13 @@ $stmt->bind_result($cnam, $cad, $ccph, $czip);
 while($stmt->fetch()) { }
 
 //echo '<li><a href="projectdetails.php?fid='.$cnam.'">'.$cad.' ('.$czip.')</a></li>'.PHP_EOL;
-	echo '<h1>'. $cnam .'</h1>';
+	echo '<h4>'.'Company/Project'.'</h4>';
+	echo '<p>'. $cnam .'</p>';
 	
 ?>
 
-<h2>CURRENT PROJECTS</h2>
-<ul>
+
+
 <?php
 $sql = 'select `project-name`, `project-description`, `project-start-date`, `project-end-date`, `other-project-details`
 from `project`
@@ -62,8 +69,11 @@ while($stmt->fetch()) {
 	
 }
 ?>
+</div>
 
+<div class="rightbox">
 <h2>Resources</h2>
+<p>Click on Resource name to get more details</p>
 <ul>
 <?php
 $sql = 'SELECT `Resource-Name` 
@@ -84,8 +94,9 @@ while($stmt->fetch()) {
 
  
 </ul>
+</div>
 
-
+</div>
 
 
 </body>

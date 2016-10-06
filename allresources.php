@@ -12,7 +12,10 @@
 /*The include statement includes and evaluates the specified file.*/
 include 'menu.php';
 ?>
-
+<div class="bigbox">
+<img src="img/browser.png" alt="logo" style="width:70px;height:75px;">
+<h1>JUST WEB- Client's Details</h1>
+<br>
 <ul>
 <?php 
 
@@ -39,7 +42,7 @@ while($stmt->fetch()) {
 }
 ?>
 </ul>
-
+</div>
 
 
 

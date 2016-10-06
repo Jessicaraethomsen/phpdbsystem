@@ -8,8 +8,9 @@
 <body>
 
 <?php
-$cnam = filter_input(INPUT_POST, '$cnam', FILTER_SANITIZE_STRING) or die('Missing/illegal parameter');
+$cnam = filter_input(INPUT_POST, '$cnam', FILTER_SANITIZE_STRING) or die('Missing/illegal parameter6');
 $cid = filter_input(INPUT_POST, '$cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter2');
+
 
 require_once 'dbcon.php';
 
@@ -30,6 +31,9 @@ else {
 
 }
 ?>
+
+
+
 <br>
 <a href="clientdetails.php?cid=<?=$cid?>">Client details</a><br>
 </body>
