@@ -9,7 +9,13 @@
 
 ?>
 
-<ul>
+<ul id="nav">
 <li> <a href="index.php"<?php if($curpage == 'index.php') {echo 'class="active"'; }?>> Clients </a></li>
 <li> <a href="allresources.php"<?php if($curpage == 'allresources.php') {echo 'class="active"'; }?>> All Resources </a></li>
 </ul>
+
+<br>
+<br>
+<br>
+<br>
+<br>

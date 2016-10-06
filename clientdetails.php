@@ -3,17 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Untitled Document</title>
-<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 
 <body>
-
-<?php
-
-/*The include statement includes and evaluates the specified file.*/
-include 'menu.php';
-?>
 
 <h2>Client info</h2>
 <?php
@@ -33,21 +26,46 @@ $stmt->bind_result($cnam, $cadr, $ccnam, $ccphone, $czip);
 while($stmt->fetch()) { }
 
 echo '<h3>'.$cnam.'</h3>';
+?>
+<!--UPDATE DETAILS-->
+	<form action="updatedetails.php" method="post">
+    	<input type="hidden" name="$cid" value='<?=$cid?>'>
+        <input type="text" name="$cnam" placeholder="Client Name">
+    	<input type="submit" value="Update Name">
+    </form>
+<?php 
 	//combine to strings and make between them
 	echo '<h4>'.'Address:'.'</h4>';
 	echo '<p>'.$cadr. ' ' .$czip.'</p>';
+	?>
+    <?php 
+    $sql = 'SELECT `City` 
+	FROM `Zip_Code` 
+	WHERE `Zip_Code_ID` = ?';
+
+$stmt = $link->prepare($sql);
+$stmt->bind_param('i', $czip);
+$stmt->execute();
+$stmt->bind_result($ci);
+
+while($stmt->fetch()) { 
+	echo '<p>'.$ci.'</p>';
+	?>
+    
+    <?php
 	echo '<h4>'.'Project Contact:'.'</h4>';
 	echo '<p>'.$ccnam.'</p>';
 	echo '<h4>'.'Contact Number:'.'</h4>';
 	echo '<p>'.$ccphone.'</p>';
-	
+}
 ?>
 </ul>
+      
 
 <h2>Projects</h2>
 <ul>
 
-<!--DELETE PROJECT-->
+<!--PROJECTS-->
 <?php 
 
 $sql = 'select `project-id`, `project-name`
@@ -61,29 +79,11 @@ $stmt->execute();
 $stmt->bind_result($pid, $pnam);
 
 while($stmt->fetch()) { 
-	echo '<li><a href="projectdetails.php?cid='.$cid.'">'.$pnam.'</a>'; ?>	
-
-<?php
-echo '</li>'; }
-?>
-
+	echo '<li><a href="projectdetails.php?cid='.$cid.'">'.$pnam.'</a>'; 
+}
+	?>	
 </ul>
 
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
