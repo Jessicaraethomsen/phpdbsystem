@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Our Clients</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-
 <?php
 
 /*The include statement includes and evaluates the specified file.*/
 include 'menu.php';
 ?>
+
 
 <h1>Clients</h1>
 <ul>
@@ -34,11 +35,11 @@ while($stmt->fetch()){
 
 <h3> ADD A PROJECT </h3>
 <form action="addproject.php" method="post">
-    <input type="text" name="$cnam" placeholder="Client Name">
-    <input type="text" name="$cad" placeholder="Adress">	
-    <input type="text" name="$ccnam" placeholder="Contact Name">
-    <input type="text" name="$cphone" placeholder="Contact Phone">
-      <input type="text" name="$czip" placeholder="Contact Zip">
+    <input type="text" name="$cnam" placeholder="Client Name" required>
+    <input type="text" name="$cad" placeholder="Adress" required>	
+    <input type="text" name="$ccnam" placeholder="Contact Name" required>
+    <input type="text" name="$cphone" placeholder="Contact Phone" required>
+      <input type="text" name="$czip" placeholder="Contact Zip" required>
     <input type="submit" value="Add New Client">
 </form>
 
