@@ -1,4 +1,12 @@
+<link rel="stylesheet" type="text/css" href="style.css">
 <body>
+
+<?php
+
+/*The include statement includes and evaluates the specified file.*/
+include 'menu.php';
+?>
+
 <?php
 $cnam = filter_input(INPUT_POST, '$cnam', FILTER_SANITIZE_STRING) or die('Missing/illegal parameter1');
 $cad = filter_input(INPUT_POST, '$cad', FILTER_SANITIZE_STRING) or die('Missing/illegal parameter2');
@@ -14,10 +22,10 @@ $stmt->bind_param('sssii', $cnam, $cad, $ccnam, $cphone, $czip);
 $stmt->execute();
 
 if ($stmt->affected_rows >0 ){
-	echo 'Film added to the category';
+	echo 'Your company is now in our database';
 }
 else {
-	echo 'No change - film allready added to category';
+	echo 'Not added to Database try again';
 
 }
 ?>

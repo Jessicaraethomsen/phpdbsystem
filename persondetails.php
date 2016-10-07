@@ -16,7 +16,7 @@ include 'menu.php';
 
 <div class="bigbox">
 <img src="img/browser.png" alt="logo" style="width:70px;height:75px;">
-<h1>JUST WEB- Client's Details</h1>
+<h1>JUST WEB- Personal's Details</h1>
 <br>
 
 <div class="leftbox">
@@ -73,7 +73,7 @@ while($stmt->fetch()) {
 </ul>
 
 <h3>Delete Project ID/Project Resource</h3>
-<p> Delete ID/Resource nr. from above</p>
+<p> Delete ID/Resource nr. *Must use numbers from above</p>
 <form action="deleteproject.php" method="post">
     	<input type="text" name="pid" placeholder="Project ID" required><br>
         <input type="text" name="rid" placeholder="Resource ID" required><br>

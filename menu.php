@@ -8,7 +8,7 @@
 /* IF ==(equals) the php page then echo(show) the class called active */
 
 ?>
-
+<a href="index.php"><img id="logo" src="img/logo.png" style="width:150px;height:42px; alt="logo"></a>
 <ul id="nav">
 <li> <a href="index.php"<?php if($curpage == 'index.php') {echo 'class="active"'; }?>> Clients </a></li>
 <li> <a href="allresources.php"<?php if($curpage == 'allresources.php') {echo 'class="active"'; }?>> All Resources </a></li>

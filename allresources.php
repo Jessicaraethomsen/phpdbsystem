@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>All Resources</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -21,12 +21,11 @@ include 'menu.php';
 
 require_once 'dbcon.php';
 
-$sql = 'SELECT `Resource-Name`, `Resource_Detail`, `Resource-Type-Code-ID` FROM Resources';
+$sql = 'SELECT `Resource-Name`, `Resource_Detail`, `Resource-Type-Code-ID` FROM `Resources` ORDER BY `Resource-Type-Code-ID`' ;
 
 $stmt = $link->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($rnam, $rdetail, $rtcid);
-
 while($stmt->fetch()) { 
 
 	echo '<h3>' .'Resource Name:'. '</h3>';

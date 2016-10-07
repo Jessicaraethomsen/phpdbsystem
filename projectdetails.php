@@ -45,10 +45,10 @@ while($stmt->fetch()) { }
 
 
 <?php
-$sql = 'select `project-name`, `project-description`, `project-start-date`, `project-end-date`, `other-project-details`
-from `project`
-where `project-id` = ?
-and `client-id` = `client-id`';
+$sql = 'SELECT `Project-Name`, `Project-Description`, `Project-Start-Date`, `Project-End-Date`, `Other-Project-Details`
+from `Project`
+where `Project-ID` = ?
+and `Client-ID` = `Client-ID`';
 
 $stmt = $link->prepare($sql);
 $stmt->bind_param('i', $cid);
@@ -77,7 +77,7 @@ while($stmt->fetch()) {
 <ul>
 <?php
 $sql = 'SELECT `Resource-Name` 
-FROM `RESOURCES`
+FROM `Resources`
 WHERE `Resources-ID` = ?';
 
 $stmt = $link->prepare($sql);

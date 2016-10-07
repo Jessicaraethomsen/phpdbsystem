@@ -3,9 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>update</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+<?php
+
+/*The include statement includes and evaluates the specified file.*/
+include 'menu.php';
+?>
+
 
 <?php
 $cnam = filter_input(INPUT_POST, '$cnam', FILTER_SANITIZE_STRING) or die('Missing/illegal parameter6');
@@ -35,7 +42,7 @@ else {
 
 
 <br>
-<a href="clientdetails.php?cid=<?=$cid?>">Client details</a><br>
+<a href="clientdetails.php?cid=<?=$cid?>">Back to Client details</a><br>
 </body>
 
 </html>

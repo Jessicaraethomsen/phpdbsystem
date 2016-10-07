@@ -2,10 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>delete</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+<?php
+
+/*The include statement includes and evaluates the specified file.*/
+include 'menu.php';
+?>
+
 
 <?php
 $pid = filter_input(INPUT_POST, 'pid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter1');

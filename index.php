@@ -23,7 +23,7 @@ include 'menu.php';
 <?php
 require_once 'dbcon.php';
 
-$sql = 'SELECT `CLIENT-ID`, `CLIENT-NAME` FROM `Client`';
+$sql = 'SELECT `CLIENT-ID`, `CLIENT-NAME` FROM `Client` ORDER BY `CLIENT-NAME`';
 $stmt = $link->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($cid, $cnam);
